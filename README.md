@@ -75,11 +75,33 @@ Integrates all submodules into a single SoC-ready block.
 ```text
 CogniChip/
 ├── rtl/
+│   ├── activity_counter/
+│   ├── cfg_regs/
+│   ├── clock_gater/
+│   ├── idle_predictor/
+│   ├── perf_counter/
+│   ├── power_fsm/
+│   └── top/
+│
 ├── Simulation/
+│   ├── Final_waveform.fst
+│   ├── Simulation.json
+│
 ├── Synthesis/
+│   ├── DEPS.yml
+│   ├── synth_activity_counter.sv
+│   ├── synth_cfg_regs.sv
+│   ├── synth_clock_gater.sv
+│   ├── synth_idle_predictor.sv
+│   ├── synth_perf_counters.sv
+│   ├── synth_power_fsm.sv
+│   ├── synth_pwr_ctrl_top.sv
+│   ├── synth_yosys.synth.log
+│   ├── slang_yosys.slang.log
+│   └── synth_eda.log
+│
 └── README.md
 ```
-
 ---
 
 ## ✨ Developed with CogniChip
