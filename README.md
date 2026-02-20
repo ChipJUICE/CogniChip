@@ -1,4 +1,4 @@
-# CogniPower — Adaptive Peripheral Power Management System
+# Adaptive Peripheral Power Management System
 
 **CogniPower** is an adaptive, multi-peripheral **power management and clock-gating subsystem** designed and developed using the **CogniChip hardware design platform**.
 
