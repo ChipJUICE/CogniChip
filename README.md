@@ -1,6 +1,6 @@
 # Adaptive Peripheral Power Management System
 
-**CogniPower** is an adaptive, multi-peripheral **power management and clock-gating subsystem** designed and developed using the **CogniChip hardware design platform**.
+**PowerNap** is an adaptive, multi-peripheral **power management and clock-gating subsystem** designed and developed using the **CogniChip hardware design platform**.
 
 The project demonstrates an end-to-end RTL design flow — from AI-assisted module generation to system-level simulation and synthesis — with a strong focus on **reducing switching activity and dynamic power** in SoC peripherals.
 
