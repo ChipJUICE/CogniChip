@@ -1,3 +1,0 @@
-perf_counters:
-  deps:
-    - perf_counters.sv
