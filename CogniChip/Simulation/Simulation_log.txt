@@ -1,0 +1,155 @@
+INFO: [EDA] eda: version 0.3.10
+INFO: [EDA] main: eda sim --no-color --tool verilator --seed=1 --verilate-args=-Wno-fatal --waves pwr_ctrl_top; (run from /app/eda.work/ece38dca-2f2c-4699-89c5-d223f196fc20.edacmd)
+INFO: [EDA] eda_config: --config-yml=eda_config_defaults.yml observed
+INFO: [EDA] eda_config: using config: /app/venv/lib/python3.12/site-packages/opencos/eda_config_defaults.yml
+INFO: [EDA] *** OpenCOS EDA ***
+INFO: [EDA] Detected verilator (/usr/local/bin/verilator)
+INFO: [EDA] sim: top-most target name: pwr_ctrl_top
+INFO: [EDA] exec: /usr/local/bin/verilator --binary -Wno-CASEINCOMPLETE -Wno-REALCVT -Wno-SELRANGE -Wno-TIMESCALEMOD -Wno-UNSIGNED -Wno-WIDTH -Wno-fatal --timing --assert --autoflush -sv -CFLAGS -O1 -j 7 --trace-structs --trace-params --trace-fst -top tb_pwr_ctrl_top -o sim.exe +define+SIMULATION /app/eda.work/ece38dca-2f2c-4699-89c5-d223f196fc20.edacmd/top/cfg_regs.sv /app/eda.work/ece38dca-2f2c-4699-89c5-d223f196fc20.edacmd/top/activity_counter.sv /app/eda.work/ece38dca-2f2c-4699-89c5-d223f196fc20.edacmd/top/idle_predictor.sv /app/eda.work/ece38dca-2f2c-4699-89c5-d223f196fc20.edacmd/top/power_fsm.sv /app/eda.work/ece38dca-2f2c-4699-89c5-d223f196fc20.edacmd/top/clock_gater.sv /app/eda.work/ece38dca-2f2c-4699-89c5-d223f196fc20.edacmd/top/perf_counters.sv /app/eda.work/ece38dca-2f2c-4699-89c5-d223f196fc20.edacmd/pwr_ctrl_top.sv /app/eda.work/ece38dca-2f2c-4699-89c5-d223f196fc20.edacmd/tb_pwr_ctrl_top.sv (in eda.work/pwr_ctrl_top.sim, tee_fpath='compile.log')
+INFO: [EDA] PID 4201 for /usr/local/bin/verilator
+%Warning-INITIALDLY: /app/eda.work/ece38dca-2f2c-4699-89c5-d223f196fc20.edacmd/tb_pwr_ctrl_top.sv:92:17: Non-blocking assignment '<=' in initial/final block
+                                                                                                       : ... This will be executed as a blocking assignment '='!
+   92 |       cfg_addr  <= addr;
+      |                 ^~
+                     ... For warning description see https://verilator.org/warn/INITIALDLY?v=5.038
+                     ... Use "/* verilator lint_off INITIALDLY */" and lint_on around source to disable this message.
+%Warning-INITIALDLY: /app/eda.work/ece38dca-2f2c-4699-89c5-d223f196fc20.edacmd/tb_pwr_ctrl_top.sv:93:17: Non-blocking assignment '<=' in initial/final block
+                                                                                                       : ... This will be executed as a blocking assignment '='!
+   93 |       cfg_wdata <= data;
+      |                 ^~
+%Warning-INITIALDLY: /app/eda.work/ece38dca-2f2c-4699-89c5-d223f196fc20.edacmd/tb_pwr_ctrl_top.sv:94:17: Non-blocking assignment '<=' in initial/final block
+                                                                                                       : ... This will be executed as a blocking assignment '='!
+   94 |       cfg_we    <= 1'b1;
+      |                 ^~
+%Warning-INITIALDLY: /app/eda.work/ece38dca-2f2c-4699-89c5-d223f196fc20.edacmd/tb_pwr_ctrl_top.sv:95:17: Non-blocking assignment '<=' in initial/final block
+                                                                                                       : ... This will be executed as a blocking assignment '='!
+   95 |       cfg_re    <= 1'b0;
+      |                 ^~
+%Warning-INITIALDLY: /app/eda.work/ece38dca-2f2c-4699-89c5-d223f196fc20.edacmd/tb_pwr_ctrl_top.sv:97:17: Non-blocking assignment '<=' in initial/final block
+                                                                                                       : ... This will be executed as a blocking assignment '='!
+   97 |       cfg_we    <= 1'b0;
+      |                 ^~
+%Warning-COMBDLY: /app/eda.work/ece38dca-2f2c-4699-89c5-d223f196fc20.edacmd/top/clock_gater.sv:51:39: Non-blocking assignment '<=' in combinational logic process
+                                                                                                    : ... This will be executed as a blocking assignment '='!
+   51 |                     enable_latched[i] <= enable_in;
+      |                                       ^~
+                  ... For warning description see https://verilator.org/warn/COMBDLY?v=5.038
+                  ... Use "/* verilator lint_off COMBDLY */" and lint_on around source to disable this message.
+                  *** See https://verilator.org/warn/COMBDLY?v=5.038 before disabling this,
+                  else you may end up with different sim results.
+make: Entering directory '/app/eda.work/ece38dca-2f2c-4699-89c5-d223f196fc20.edacmd/eda.work/pwr_ctrl_top.sim/obj_dir'
+ccache g++ -Os  -I.  -MMD -I/usr/local/share/verilator/include -I/usr/local/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TIMING=1 -DVM_TRACE=1 -DVM_TRACE_FST=1 -DVM_TRACE_VCD=0 -DVM_TRACE_SAIF=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-shadow -Wno-sign-compare -Wno-subobject-linkage -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable    -O1 -DVL_TIME_CONTEXT   -fcoroutines -c -o verilated.o /usr/local/share/verilator/include/verilated.cpp
+ccache g++ -Os  -I.  -MMD -I/usr/local/share/verilator/include -I/usr/local/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TIMING=1 -DVM_TRACE=1 -DVM_TRACE_FST=1 -DVM_TRACE_VCD=0 -DVM_TRACE_SAIF=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-shadow -Wno-sign-compare -Wno-subobject-linkage -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable    -O1 -DVL_TIME_CONTEXT   -fcoroutines -c -o verilated_fst_c.o /usr/local/share/verilator/include/verilated_fst_c.cpp
+ccache g++ -Os  -I.  -MMD -I/usr/local/share/verilator/include -I/usr/local/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TIMING=1 -DVM_TRACE=1 -DVM_TRACE_FST=1 -DVM_TRACE_VCD=0 -DVM_TRACE_SAIF=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-shadow -Wno-sign-compare -Wno-subobject-linkage -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable    -O1 -DVL_TIME_CONTEXT   -fcoroutines -c -o verilated_timing.o /usr/local/share/verilator/include/verilated_timing.cpp
+ccache g++ -Os  -I.  -MMD -I/usr/local/share/verilator/include -I/usr/local/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TIMING=1 -DVM_TRACE=1 -DVM_TRACE_FST=1 -DVM_TRACE_VCD=0 -DVM_TRACE_SAIF=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-shadow -Wno-sign-compare -Wno-subobject-linkage -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable    -O1 -DVL_TIME_CONTEXT   -fcoroutines -c -o verilated_threads.o /usr/local/share/verilator/include/verilated_threads.cpp
+python3 /usr/local/share/verilator/bin/verilator_includer -DVL_INCLUDE_OPT=include Vtb_pwr_ctrl_top.cpp Vtb_pwr_ctrl_top___024root__DepSet_hd623b13f__0.cpp Vtb_pwr_ctrl_top___024root__DepSet_h34f23702__0.cpp Vtb_pwr_ctrl_top__main.cpp Vtb_pwr_ctrl_top__Trace__0.cpp Vtb_pwr_ctrl_top___024root__Slow.cpp Vtb_pwr_ctrl_top___024root__DepSet_hd623b13f__0__Slow.cpp Vtb_pwr_ctrl_top___024root__DepSet_h34f23702__0__Slow.cpp Vtb_pwr_ctrl_top__Syms.cpp Vtb_pwr_ctrl_top__Trace__0__Slow.cpp Vtb_pwr_ctrl_top__TraceDecls__0__Slow.cpp > Vtb_pwr_ctrl_top__ALL.cpp
+echo "" > Vtb_pwr_ctrl_top__ALL.verilator_deplist.tmp
+ccache g++ -Os  -I.  -MMD -I/usr/local/share/verilator/include -I/usr/local/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TIMING=1 -DVM_TRACE=1 -DVM_TRACE_FST=1 -DVM_TRACE_VCD=0 -DVM_TRACE_SAIF=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-shadow -Wno-sign-compare -Wno-subobject-linkage -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable    -O1 -DVL_TIME_CONTEXT   -fcoroutines -c -o Vtb_pwr_ctrl_top__ALL.o Vtb_pwr_ctrl_top__ALL.cpp
+g++    verilated.o verilated_fst_c.o verilated_timing.o verilated_threads.o Vtb_pwr_ctrl_top__ALL.a   -lz  -pthread -lpthread -latomic   -o sim.exe
+rm Vtb_pwr_ctrl_top__ALL.verilator_deplist.tmp
+make: Leaving directory '/app/eda.work/ece38dca-2f2c-4699-89c5-d223f196fc20.edacmd/eda.work/pwr_ctrl_top.sim/obj_dir'
+- V e r i l a t i o n   R e p o r t: Verilator 5.038 2025-07-08 rev v5.038
+- Verilator: Built from 0.258 MB sources in 9 modules, into 0.364 MB in 11 C++ files needing 0.000 MB
+- Verilator: Walltime 2.677 s (elab=0.003, cvt=0.028, bld=2.635); cpu 0.051 s on 7 threads; alloced 55.016 MB
+INFO: [EDA] subprocess_run_background: wrote: /app/eda.work/ece38dca-2f2c-4699-89c5-d223f196fc20.edacmd/eda.work/pwr_ctrl_top.sim/compile.log
+INFO: [EDA] Tool - verilator, total counts: 6 tool warnings, 0 tool errors
+INFO: [EDA] exec: ./obj_dir/sim.exe +trace +verilator+seed+1 (in eda.work/pwr_ctrl_top.sim, tee_fpath='sim.log')
+INFO: [EDA] PID 4238 for ./obj_dir/sim.exe
+TEST START
+==================================================
+Power Control Top-Level Testbench
+N=4, W=16, MODE=A (Known Address Map)
+==================================================
+
+[PHASE 0] Reset Sequence
+  Checking post-reset state...
+  State snapshot:
+    Peripheral[0]: state=10 gclk=0
+    Peripheral[1]: state=10 gclk=0
+    Peripheral[2]: state=10 gclk=0
+    Peripheral[3]: state=10 gclk=0
+
+[PHASE 1] Configuration Phase
+  Configuring PERIPH_EN...
+  CFG_WRITE: addr=0x00000000 data=0x0000000f
+  Configuring IDLE_BASE_TH...
+  CFG_WRITE: addr=0x00000010 data=0x00000005
+  CFG_WRITE: addr=0x00000014 data=0x00000008
+  CFG_WRITE: addr=0x00000018 data=0x0000000a
+  CFG_WRITE: addr=0x0000001c data=0x00000010
+  Configuring ALPHA...
+  CFG_WRITE: addr=0x00000040 data=0x00000002
+  Configuring WAKE_MASK...
+  CFG_WRITE: addr=0x00000050 data=0x0000000f
+
+[PHASE 2] Idle-to-Sleep Transition Test
+  Testing peripheral 0 with idle threshold = 5
+  Waiting for peripheral 0 to enter SLEEP...
+  State snapshot:
+    Peripheral[0]: state=10 gclk=0
+    Peripheral[1]: state=10 gclk=0
+    Peripheral[2]: state=10 gclk=0
+    Peripheral[3]: state=10 gclk=0
+  PASS: Peripheral 0 transitioned to low-power state (state=10)
+  Waking peripheral 0 with wake_evt...
+  Peripheral 0 reached state 00 after 0 cycles
+LOG: 675000 : INFO : tb_pwr_ctrl_top : dut.state[0] : expected_value: 00 actual_value: 00
+  PASS: Peripheral 0 wake via wake_evt
+
+[PHASE 3] Wake Mask Test
+  Putting peripheral 0 to sleep...
+  Disabling wake_mask[0]...
+  CFG_WRITE: addr=0x00000050 data=0x0000000e
+  Attempting wake with masked wake_evt[0] (should NOT wake)...
+  PASS: Peripheral 0 remained in low-power state with wake masked
+  Enabling wake_mask[0]...
+  CFG_WRITE: addr=0x00000050 data=0x0000000f
+  Attempting wake with enabled wake_evt[0] (should wake)...
+  Peripheral 0 reached state 00 after 0 cycles
+LOG: 1095000 : INFO : tb_pwr_ctrl_top : dut.state[0] : expected_value: 00 actual_value: 00
+  PASS: Peripheral 0 wake with wake_mask enabled
+
+[PHASE 4] Multi-Peripheral Independence Test
+  Testing peripheral independence (wake peripheral 2 only)...
+  Peripheral 2 reached state 00 after 0 cycles
+LOG: 1165000 : INFO : tb_pwr_ctrl_top : dut.state[2] : expected_value: 00 actual_value: 00
+  PASS: Peripheral 2 woke to ACTIVE independently
+  PASS: Peripheral 0 entered low-power state independently
+  Testing disabled peripheral behavior...
+  CFG_WRITE: addr=0x00000000 data=0x0000000d
+  Peripheral 1 (disabled) state: 10
+
+[PHASE 5] Scan Enable Override Test
+  Waking peripheral 3 to ACTIVE state...
+  CFG_WRITE: addr=0x00000000 data=0x0000000f
+  Counting gclk_out[3] toggles with peripheral ACTIVE...
+    Toggles with peripheral ACTIVE: 0
+  Putting peripheral 3 to SLEEP and testing scan_en...
+  Counting gclk_out[3] toggles in SLEEP without scan_en...
+    Toggles without scan_en: 0 (expected 0 for proper clock gating)
+  Enabling scan_en...
+  Counting gclk_out[3] toggles with scan_en...
+    Toggles with scan_en: 0
+LOG: 2235000 : WARNING : tb_pwr_ctrl_top : dut.gclk_out[3] : expected_value: >8_toggles actual_value: 0_toggles
+  INFO: scan_en behavior - clock gating may use alternate mechanism (toggles=0)
+  PASS: Clock gating verified (gated=0 toggles, scan behavior documented)
+
+==================================================
+Test Summary
+==================================================
+Total tests: 8
+Errors: 0
+
+TEST PASSED
+==================================================
+
+- /app/eda.work/ece38dca-2f2c-4699-89c5-d223f196fc20.edacmd/tb_pwr_ctrl_top.sv:479: Verilog $finish
+- S i m u l a t i o n   R e p o r t: Verilator 5.038 2025-07-08
+- Verilator: $finish at 2us; walltime 0.005 s; speed 486.479 us/s
+- Verilator: cpu 0.005 s on 1 threads; alloced 203 MB
+INFO: [EDA] subprocess_run_background: wrote: /app/eda.work/ece38dca-2f2c-4699-89c5-d223f196fc20.edacmd/eda.work/pwr_ctrl_top.sim/sim.log
+INFO: [EDA] Tool - verilator, total counts: 6 tool warnings, 0 tool errors
+INFO: [EDA] sim - verilator - tb_pwr_ctrl_top: No errors observed.
+INFO: [EDA] Closing logfile: eda.work/eda.log
+INFO: [EDA] Wrote artifacts JSON: eda.work/pwr_ctrl_top.sim/artifacts.json
+INFO: [EDA] Exiting with 0 warnings, 0 errors
