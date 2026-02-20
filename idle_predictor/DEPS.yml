@@ -1,3 +1,0 @@
-idle_predictor:
-  deps:
-    - idle_predictor.sv
